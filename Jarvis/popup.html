@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarvis AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts for premium feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>Jarvis</h1>
+            </div>
+            <button id="settings-btn" aria-label="Settings">⚙️</button>
+        </header>
+
+        <div class="main-interface">
+            <div class="status-ring" id="status-ring">
+                <div class="pulse-circle"></div>
+                <button id="mic-btn" aria-label="Activate Voice Control">
+                    <span class="mic-icon">🎙️</span>
+                </button>
+            </div>
+            <p id="status-text">Ready to help.</p>
+        </div>
+
+        <div class="transcript-area">
+            <div id="transcript" placeholder="Listening..."></div>
+        </div>
+
+        <div class="input-area" style="margin-top: 10px; display: flex; gap: 5px;">
+            <input type="text" id="manual-input" placeholder="Or type a command..."
+                style="flex: 1; padding: 8px; border-radius: 6px; border: 1px solid #334155; background: var(--bg-color); color: var(--text-color);">
+            <button id="send-btn"
+                style="padding: 8px 12px; background: var(--accent-color); color: white; border: none; border-radius: 6px; cursor: pointer;">→</button>
+        </div>
+
+        <button id="fix-mic-btn" class="hidden"
+            style="margin-top: 10px; width: 100%; padding: 8px; background: #ef4444; color: white; border: none; border-radius: 6px; cursor: pointer;">
+            ⚠️ Fix Microphone Permission
+        </button>
+
+        <div id="settings-panel" class="hidden">
+            <h3>Settings</h3>
+            <div class="settings-section">
+                <h4>AI Configuration</h4>
+                <label>
+                    <input type="checkbox" id="use-llm"> Use Local LLM (Ollama)
+                </label>
+                <input type="text" id="llm-url" value="http://localhost:11434" placeholder="Ollama URL">
+            </div>
+
+            <div class="settings-section">
+                <h4>Autofill Profile</h4>
+                <input type="text" id="p-name" placeholder="Full Name">
+                <input type="email" id="p-email" placeholder="Email Address">
+                <input type="tel" id="p-phone" placeholder="Phone Number">
+                <input type="text" id="p-addr" placeholder="Address">
+            </div>
+
+            <button id="save-settings">Save Settings & Profile</button>
+        </div>
+    </div>
+    <script type="module" src="popup.js"></script>
+</body>
+
+</html>

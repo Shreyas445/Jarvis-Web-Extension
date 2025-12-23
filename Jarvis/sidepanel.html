@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarvis Chat</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="chat-container">
+        <header>
+            <div class="logo">
+                <h1><i class="fa-solid fa-robot"></i> Jarvis</h1>
+            </div>
+            <div class="header-controls">
+                <button id="convo-btn" aria-label="Conversation Mode" title="Conversation Mode (Hands-Free)"><i
+                        class="fa-solid fa-headset"></i></button>
+                <button id="speaker-btn" aria-label="Text-to-Speech" title="Read Responses Aloud"><i
+                        class="fa-solid fa-volume-high"></i></button>
+                <button id="settings-btn" aria-label="Settings"><i class="fa-solid fa-gear"></i></button>
+            </div>
+        </header>
+
+        <div id="chat-history" class="chat-history">
+            <div class="message bot">
+                <div class="bubble">Hello! I'm Jarvis. Ask me to search, scroll, or fill forms.</div>
+            </div>
+        </div>
+
+        <div class="input-area">
+            <button id="mic-btn" aria-label="Voice Input"><i class="fa-solid fa-microphone"></i></button>
+            <input type="text" id="chat-input" placeholder="Type a command...">
+            <button id="send-btn" aria-label="Send"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+
+        <div id="settings-panel" class="hidden">
+            <h3>Settings</h3>
+            <div class="settings-section">
+                <h4>AI Configuration</h4>
+                <label>
+                    <input type="checkbox" id="use-llm"> Use Local AI (Ollama)
+                </label>
+                <input type="text" id="llm-url" value="http://localhost:11434" placeholder="Ollama URL">
+            </div>
+
+            <div class="settings-section">
+                <h4>Autofill Profile</h4>
+                <input type="text" id="p-name" placeholder="Full Name">
+                <input type="email" id="p-email" placeholder="Email Address">
+                <input type="tel" id="p-phone" placeholder="Phone Number">
+                <input type="text" id="p-addr" placeholder="Address">
+            </div>
+
+            <button id="save-settings">Save Settings</button>
+        </div>
+    </div>
+    <script type="module" src="sidepanel.js"></script>
+</body>
+
+</html>
